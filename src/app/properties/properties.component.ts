@@ -15,6 +15,7 @@ propertyModelObj:Property =new Property();
 showAdd!:boolean;
 showEdit!:boolean;
 count: number = 0; 
+propertydata: any;
 constructor(private fb:FormBuilder,private api:PropertyService){}
 
 ngOnInit(){
@@ -48,7 +49,19 @@ clickCount(): void{
 displayPermission(data:any){
     data.open = !data.open;
 }
+populateForm(data: Property) {
+  this.propertydata = data;
+  this.formValue.patchValue({
+    ptitle: data.ptitle,
+    pptice: data.pprice,
+    plocation: data.plocation,
+    pdetails: data.pdetails,
+  });
+}
 
+editUser(data: Property) {
+  this.formValue.populateForm(data);
+}
 deleteProperty(data:any){
   console.log('data--',data)
   this.api.deleteProperty(data.id).subscribe((res:any)=>{

@@ -8,14 +8,14 @@
       "pdetails": " Doble Bed Room"
     },
     {
-      "id": 0,
+      "id": 2,
       "ptitle": "Hadiya Developers",
       "pprice": "95 Lakhs",
       "plocation": "Hyderabad",
       "pdetails": "Here is the non governmnet land"
     },
     {
-      "id": 0,
+      "id": 3,
       "ptitle": "Hiba Developers",
       "pprice": "96 Lakhs",
       "plocation": "Andhra Pradesh",
@@ -38,8 +38,14 @@
       "password": "user@1234"
     },
     {
+        "id": 0,
+        "email": "uzmahadiya04@gmail.com",
+        "password": "user@9676"
+      },
+    {
       "id": 0,
-      "password": ""
+      "email": "uzmabegum04@gmail.com",
+      "password": "user@1234"
     }
   ]
 }

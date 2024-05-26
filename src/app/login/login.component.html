@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+       <div class="col-md-6">
+          <div class="card">
+            <div class="text-center" style="background-color: gray;color: white;">
+                 <h1>Admin</h1>
+                 <h5>Login to manage Property</h5>
+            </div>
+            <hr>
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Email</label>
+                      <input type="email"  class="form-control" id="formGroupExampleInput" formControlName="email" placeholder="Enter Email" autocomplete="off">
+                      <div *ngIf="formValue.get('email').errors && formValue.get('email').touched">
+                        <div style="color:red" *ngIf="formValue.get('email').errors.required">Email is required.</div>
+                        <div style="color:red"  *ngIf="formValue.get('email').errors.email">Invalid email format.</div>
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="inputPassword" formControlName="password"  placeholder="Enter Password" autocomplete="off">
+                      <div *ngIf="formValue.get('password').errors && formValue.get('password').touched">
+                        <div style="color:red"  *ngIf="formValue.get('password').errors.required">Password is required.</div>
+                        <div style="color:red"  *ngIf="formValue.get('password').errors.minlength">Password must be at least 8 characters long.</div>
+                      </div>
+                  
+                  </div>
+                  <button type="button" class="btn btn-primary text-center" (click)="login()">Login</button>
+            </form>
+            <a style="text-decoration: none;cursor: pointer;color: red;" (click)="redirect()">New User ? Click to Sign Up</a>
+
+          </div>
+       </div>
+    </div>
+</div>
+
